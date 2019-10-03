@@ -46,7 +46,7 @@ expectPORTB 0x00
 checkResult
 
 test “PINA: 0x03 => PORTB: 0x00”
-setPINA 0x01
+setPINA 0x03
 continue 5
 expectPORTB 0x00
 checkResult
