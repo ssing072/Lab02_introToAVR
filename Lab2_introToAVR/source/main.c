@@ -23,8 +23,8 @@ int main(void) {
 		tmpA = PINA & 0x01;
 		tmpB = PINA & 0x02;
 		// 2) Perform computation
-		// if PA0 is 1, set PB1PB0 = 01, else = 10
-		if (tmpA == 0x01 && tmpB == 0x00) { // True if  PA0 is 1
+		// if PA0 is 1 and PA1 is 0, then set PB0 to 01 else 00
+		if (tmpA == 0x01 && tmpB == 0x00) { // True if  PA0 is 1 and PA1 is 0
 			tmpC = (tmpC & 0xFE) | 0x01; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} else {
