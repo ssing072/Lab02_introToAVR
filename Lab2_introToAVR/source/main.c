@@ -25,10 +25,10 @@ int main(void) {
 		// 2) Perform computation
 		// if PA0 is 1, set PB1PB0 = 01, else = 10
 		if (tmpA == 0x01 && tmpB == 0x00) { // True if  PA0 is 1
-			tmpC = (tmpC & 0xFC) | 0x01; // Sets tmpB to bbbbbb01
+			tmpC = (tmpC & 0xFE) | 0x01; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} else {
-			tmpC = (tmpC & 0xFC) | 0x00; // Sets tmpB to bbbbbb00
+			tmpC = (tmpC & 0xFE) | 0x00; // Sets tmpB to bbbbbb00
 							 // (clear rightmost 2 bits, then set to 00)
 		}	
 	// 3) Write output
