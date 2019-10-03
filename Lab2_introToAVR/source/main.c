@@ -25,7 +25,7 @@ int main(void) {
 			tmpB = (tmpB & 0xFC) | 0x01; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} else {
-			tmpB = (tmpB & 0xFC) | 0x02; // Sets tmpB to bbbbbb10
+			tmpB = (tmpB & 0xFC) | 0x00; // Sets tmpB to bbbbbb10
 							 // (clear rightmost 2 bits, then set to 10)
 		}	
 	// 3) Write output
