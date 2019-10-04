@@ -32,15 +32,15 @@ int main(void) {
 			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		}
-		if (tmpB == 0x01) { // True if  PA0 is 1 and PA1 is 0
+		if (tmpB == 0x02) { // True if  PA0 is 1 and PA1 is 0
 			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} 
-		if (tmpC == 0x01) { // True if  PA0 is 1 and PA1 is 0
+		if (tmpC == 0x04) { // True if  PA0 is 1 and PA1 is 0
 			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} 
-		if (tmpD == 0x01) { // True if  PA0 is 1 and PA1 is 0
+		if (tmpD == 0x08) { // True if  PA0 is 1 and PA1 is 0
 			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
 		} 
