@@ -49,7 +49,9 @@ int main(void) {
 		if(cntavail == 0){
 			PORTC = 0x80;
 		}
-		PORTC = cntavail;	
+		else{
+			PORTC = cntavail;
+		}
 	}
 	return 0;
 }
