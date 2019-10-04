@@ -46,6 +46,9 @@ int main(void) {
 							 // (clear rightmost 2 bits, then set to 01)
 		} 
 		// 3) Write output
+		if(cntavail == 0){
+			PORTC = 0x80;
+		}
 		PORTC = cntavail;	
 	}
 	return 0;
