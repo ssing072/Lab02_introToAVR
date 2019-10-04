@@ -116,7 +116,7 @@ checkResult
 test “PINA: 0x0E => PORTC: 0x01”
 setPINA 0x0E
 continue 5
-expectPORTC 0x03
+expectPORTC 0x01
 checkResult
 
 test “PINA: 0x0F => PORTC: 0x80”
