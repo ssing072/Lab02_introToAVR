@@ -26,7 +26,7 @@ int main(void) {
 		tmpB = PINA & 0x02;
 		tmpC = PINA & 0x04;
 		tmpD = PINA & 0x08;
-		cntavail = 4;
+		
 		// 2) Perform computation
 		// if PA0 is 1 and PA1 is 0, then set PB0 to 01 else 00
 		if (tmpA == 0x01) { // True if  PA0 is 1 and PA1 is 0
@@ -49,7 +49,10 @@ int main(void) {
 		if(cntavail == 0){
 			PORTC = 0x80;
 		}
-		PORTC = cntavail;
+		else{
+			PORTC = cntavail;
+		}
+		cntavail = 4;
 	}
 	return 0;
 }
