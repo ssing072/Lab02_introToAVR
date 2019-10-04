@@ -14,7 +14,7 @@
 
 int main(void) {
 	DDRA = 0x00; PORTA = 0xFF; // Configure port A's 8 pins as inputs
-	DDRB = 0xFF; PORTB = 0x00; // Configure port B's 8 pins as outputs, initialize to 0s
+	DDRC = 0xFF; PORTC = 0x00; // Configure port B's 8 pins as outputs, initialize to 0s
 	unsigned char tmpB = 0x00; // Temporary variable to hold the value of A1
 	unsigned char tmpA = 0x00; // Temporary variable to hold the value of A0
 	unsigned char tmpC = 0x00; // Temporary variable to hold the value of B0
@@ -46,7 +46,7 @@ int main(void) {
 							 // (clear rightmost 2 bits, then set to 01)
 		} 
 		// 3) Write output
-		PORTB = cntavail;	
+		PORTC = cntavail;	
 	}
 	return 0;
 }
