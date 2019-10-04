@@ -19,7 +19,7 @@ int main(void) {
 	unsigned char tmpA = 0x00; // Temporary variable to hold the value of A0
 	unsigned char tmpC = 0x00; // Temporary variable to hold the value of B0
 	unsigned char tmpD = 0x00; // Temporary variable to hold the value of B0
-	unsigned char cntavail = 0x00; // Temporary variable to hold the value of B0
+	unsigned char cntavail = 4; // Temporary variable to hold the value of B0
 	while(1) {
 		// 1) Read input
 		tmpA = PINA & 0x01;
@@ -28,15 +28,24 @@ int main(void) {
 		tmpD = PINA & 0x08;
 		// 2) Perform computation
 		// if PA0 is 1 and PA1 is 0, then set PB0 to 01 else 00
-		if (tmpA == 0x01 && tmpB == 0x00) { // True if  PA0 is 1 and PA1 is 0
-			tmpC = (tmpC & 0xFE) | 0x01; // Sets tmpB to bbbbbb01
+		if (tmpA == 0x01) { // True if  PA0 is 1 and PA1 is 0
+			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
 							 // (clear rightmost 2 bits, then set to 01)
-		} else {
-			tmpC = (tmpC & 0xFE) | 0x00; // Sets tmpB to bbbbbb00
-							 // (clear rightmost 2 bits, then set to 00)
-		}	
-	// 3) Write output
-	PORTB = tmpC;	
+		}
+		if (tmpB == 0x01) { // True if  PA0 is 1 and PA1 is 0
+			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
+							 // (clear rightmost 2 bits, then set to 01)
+		} 
+		if (tmpC == 0x01) { // True if  PA0 is 1 and PA1 is 0
+			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
+							 // (clear rightmost 2 bits, then set to 01)
+		} 
+		if (tmpD == 0x01) { // True if  PA0 is 1 and PA1 is 0
+			cntavail  = cntavail - 1; // Sets tmpB to bbbbbb01
+							 // (clear rightmost 2 bits, then set to 01)
+		} 
+		// 3) Write output
+		PORTB = cntavail;	
 	}
 	return 0;
 }
