@@ -30,7 +30,7 @@ echo Running all tests..."\n\n
 test “PINA: 0x00 => PORTB: 0x04”
 setPINA 0x00
 continue 5
-expectPORTB 4
+expectPORTB 0x04
 checkResult
 
 test “PINA: 0x01 => PORTB: 0x03”
