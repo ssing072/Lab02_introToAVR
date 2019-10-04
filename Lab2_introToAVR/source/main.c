@@ -47,7 +47,7 @@ int main(void) {
 		} 
 		// 3) Write output
 		if(cntavail == 0){
-			PORTC = 0x80;
+			PORTC = 128;
 		}
 		else{
 			PORTC = cntavail;
